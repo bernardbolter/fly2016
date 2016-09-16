@@ -1,0 +1,48 @@
+.container
+	width: 100%
+	height: 100%
+	position: absolute
+
+.layout
+	width: 100%
+	height: 100%
+	position: absolute
+	background: url(img/noise_lines.png) repeat
+
+.logo
+	fill: $logo
+
+.smoothlogo
+	width: 100%
+	height: 100%
+	padding: 0
+	margin: 0
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+
+	+e(row)
+		width: 20%
+		margin-bottom: 1.5%
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+
+		+m(letterbox)
+			display: inline-block
+			position: relative
+			height: 0
+			width: 100%
+			padding: 0
+			//Default for 1:1 aspect ratio
+			padding-bottom: 44.84127%
+			vertical-align: middle
+			overflow: hidden
+
+		+m(letter)
+			position: absolute
+			height: 100%
+			width: 100%
+			left: 0
+			top: 0
