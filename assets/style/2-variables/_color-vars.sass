@@ -1,6 +1,27 @@
 // MAIN COLOR VARIABLES
 
-$logo: #013548
-$digital: #58AADB
-$dev: #81CCE9
-$agency: #EB5024
+$prime-color: #00A2C1
+$text-color: desaturate(darken($prime-color, 4), 100)
+$accent-color: lighten(desaturate(adjust_hue($prime-color, 209), 22), 5)
+$selection-color: darken(desaturate(adjust_hue($prime-color, 0), 61), 13)
+$link-color: #444
+$bg-color: #fff
+
+.logo_color_fill
+	fill: $prime-color
+
+// GRID SETTINGS
+
+.container
+	max-width: em(1050)
+	margin: 0 auto
+
+// SITE MARGINS SETTINGS
+
+$site_margin: 10px
+
+.fly-hr
+	width: 100%
+	height: $site-margin
+	background: $bg-color
+	display: block

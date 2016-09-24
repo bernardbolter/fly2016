@@ -1,0 +1,91 @@
+// Headings for each section
+
+.fly-heading
+	width: 100%
+	display: block
+	text-align: center
+	margin: -33px auto 0
+	z-index: 400
+	position: relative
+
+	.fly-head
+		text-align: center
+		width: 200px
+		padding: em(5) 0
+		border: $bg-color solid $site-margin
+		background: $prime-color
+		color: #fff
+		display: inline-block
+		margin: 0 auto
+		text-transform: uppercase
+		font-size: em(24)
+
+// header
+
+.site-header
+	width: 100%
+	max-width: 950px
+	margin: 0 auto
+
+	.hero_wrap
+		position: fixed
+		display: block
+		z-index: -10
+		left: 50%
+		transform: translate(-50%, 0%)
+		height: 500px
+		width: 950px
+		top: 65px
+
+	.hero_vid
+		width: 950px
+		position: static !important
+
+	.hero_text_wrap
+		width: 100%
+
+		.hero_text_upper
+			height: 185px
+			background: rgba(0,0,0,0.4)
+
+		h1
+			font-size: 90px
+			text-align: right
+			width: 100%
+			margin: 0
+			padding: 124px 20px 0 0
+			letter-spacing: 0.03em
+			text-transform: uppercase
+			color: desaturate(lighten($prime-color, 38), 48)
+			opacity: 0.9
+
+		.hero_text_inner
+			width: 100%
+			background: rgba(0,0,0,0.4)
+			height: 180px
+
+			ul
+				float: left
+				list-style: cirlce
+				margin: 40px 0 0 60px
+				padding: 0
+				z-index: 401
+				position relative
+				width: 35%
+
+				li
+					color: #fff
+					text-transform: uppercase
+					font-size: 20px
+					margin: 7px 0 0
+
+			h1
+				font-size: 90px
+				text-align: right
+				width: 100%
+				margin: 0
+				padding: 10px 20px 0 0
+				letter-spacing: 0.03em
+				text-transform: uppercase
+				color: #fff
+				opacity: 0.9
