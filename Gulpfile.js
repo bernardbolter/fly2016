@@ -112,11 +112,11 @@ gulp.task("webpack-in", function(callback) {
 
 	// Start a webpack-dev-server
 	new WebpackDevServer(webpack(myConfig), {
-    contentBase: "http://localhost:9090/",
+    contentBase: "http://localhost:9091/",
     hot: true,
     historyApiFallback: true,
     proxy: {
-      "*": "http://localhost:9090"
+      "*": "http://localhost:9091"
     },
 		publicPath: "http://localhost:8080/",
 		stats: {
@@ -195,7 +195,7 @@ gulp.task('clean-out', function() {
 gulp.task('connect', function() {
   connect.server({
     root: './builds/inbound',
-    port: 9090,
+    port: 9091,
     livereload: true
   });
 });
