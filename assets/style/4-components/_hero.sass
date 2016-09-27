@@ -1,92 +1,41 @@
-// Headings for each section
+// HERO STYLES
 
-.fly-heading
-	width: 100%
-	display: block
-	text-align: center
-	margin: -33px auto 0
-	z-index: 400
-	position: relative
-
-	.fly-head
-		text-align: center
-		width: 200px
-		padding: em(5) 0
-		border: $bg-color solid $site-margin
-		background: $prime-color
-		color: #fff
-		display: inline-block
-		margin: 0 auto
-		text-transform: uppercase
-		font-size: em(24)
-
-// header
-
-.site-header
-	width: 100%
-	max-width: 950px
+.hero
+	width: 75%
+	height: 420px
+	max-width: 1000px
 	margin: 0 auto
 	margin-top: -50px
+	background: url(./img/hero_plane.jpg) no-repeat center center
+	background-size: cover
+	position: relative
+	z-index: 400
 
-	.hero_wrap
-		position: fixed
-		display: block
-		z-index: -10
-		left: 50%
-		transform: translate(-50%, 0%)
-		height: 500px
-		width: 950px
-		top: 65px
+.hero_text_upper
+	margin: 0
+	padding: 100px 20px 0 0
 
-	.hero_vid
-		width: 950px
-		position: static !important
+	.hero-text-upper-accent
+		color: #a1d7e1
 
-	.hero_text_wrap
-		width: 100%
+	h1
+		font-size: 70px
+		text-align: right
+		color: #ededed
+		margin: 0
+		padding: 0
+		text-transform: uppercase
+		line-height: 1
 
-		.hero_text_upper
-			height: 185px
-			background: rgba(0,0,0,0.4)
+.hero_text_lower
+	margin: 0
+	padding: 15px 0 0 0
 
-		h1
-			font-size: 90px
-			text-align: right
-			width: 100%
-			margin: 0
-			padding: 124px 20px 0 0
-			letter-spacing: 0.03em
-			text-transform: uppercase
-			color: desaturate(lighten($prime-color, 38), 48)
-			opacity: 0.9
+	ul
+		list-style: none
 
-		.hero_text_inner
-			width: 100%
-			background: rgba(0,0,0,0.4)
-			height: 180px
-
-			ul
-				float: left
-				list-style: cirlce
-				margin: 40px 0 0 60px
-				padding: 0
-				z-index: 401
-				position relative
-				width: 35%
-
-				li
-					color: #fff
-					text-transform: uppercase
-					font-size: 20px
-					margin: 7px 0 0
-
-			h1
-				font-size: 90px
-				text-align: right
-				width: 100%
-				margin: 0
-				padding: 10px 20px 0 0
-				letter-spacing: 0.03em
-				text-transform: uppercase
-				color: #fff
-				opacity: 0.9
+	h2
+		color: #ededed
+		font-size: 24px
+		line-height: 1
+		font-weight: 400

@@ -1,35 +1,34 @@
-.services-rapstar
+.services
 	width: 100%
 	padding: 0
-	border-left: $site-margin solid $bg-color
+	margin: -37px 0 0 0
 	border-top: $site-margin solid $bg-color
-	border-right: $site-margin solid $bg-color
-	margin: -35px 0 0 0
-	display: table
 
+
+.services_wrap
+	display: flex
+	flex-direction: row
 
 	.services__flight-ferry
 		width: 50%
 		background: desaturate(darken($prime-color, 8), 67)
-		display: table-cell
+		border-left: $site-margin solid $bg-color
 
-		.services__flight-ferry--rap
-			max-width: 450px
-			float: right
-			margin: 20px
-			overflow: hidden
+		.ferry_wrap
+			text-align: right
+			max-width: 600px
 
+		h2
+			font-weight: 700
+			font-size: 30px
+			text-transform: uppercase
+			color: #fff
+			text-align: center
 
-			h2
-				font-weight: 700
-				font-size: 30px
-				text-transform: uppercase
-				color: #fff
-
-			p
-				color: $bg-color
-				font-size: 18px
-				line-height: 1.5
+		p
+			color: $bg-color
+			font-size: 18px
+			line-height: 1.5
 
 	.services__container-shipping
 		width: 50%
