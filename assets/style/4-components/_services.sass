@@ -13,17 +13,24 @@
 		width: 50%
 		background: desaturate(darken($prime-color, 8), 67)
 		border-left: $site-margin solid $bg-color
+		border-right: ($site-margin / 2) solid $bg-color
 
 		.ferry_wrap
-			text-align: right
-			max-width: 600px
+			text-align: justify
+			width: 70%
+			max-width: 500px
+			float: right
+			margin: 10px 25px 0 0
+			letter-spacing: 0.05em
 
 		h2
 			font-weight: 700
 			font-size: 30px
 			text-transform: uppercase
-			color: #fff
+			color: $bg-color
 			text-align: center
+			letter-spacing: 0.1em
+			line-height: 1.7
 
 		p
 			color: $bg-color
@@ -33,45 +40,53 @@
 	.services__container-shipping
 		width: 50%
 		background: desaturate(lighten($prime-color, 4), 78)
-		display: table-cell
+		border-right: $site-margin solid $bg-color
+		border-left: ($site-margin / 2) solid $bg-color
 
-		.services__container-shipping--rap
-			max-width: 450px
+		.container_wrap
+			text-align: justify
+			width: 70%
+			max-width: 500px
+			margin: 10px 0 0 25px
 			float: left
-			margin: 0 0 0 20px
-			overflow: hidden
+			letter-spacing: 0.05em
+			line-height: 1.7
 
 
-			h2
-				font-weight: 700
-				font-size: 30px
-				text-transform: uppercase
-				color: #fff
-				text-align: right
+		h2
+			font-weight: 700
+			font-size: 30px
+			text-transform: uppercase
+			color: $bg-color
+			text-align: center
+			letter-spacing: 0.1em
 
-			p
-				color: $bg-color
-				font-size: 18px
-				line-height: 1.5
+		p
+			color: $bg-color
+			font-size: 18px
+			line-height: 1.5
 
 .services_quote_rap
 	width: 100%
 	margin: 0
 	padding: 0
+	display: flex
+	flex-direction: row
+	justify-content: center
 
 
 	.services_quote_left
 		background: desaturate(darken($prime-color, 8), 67)
 		height: 60px
-		width: calc(50% - 200px)
+		width: 50%
 		display: block
 		float: left
 		border-left: $site-margin solid $bg-color
 
 	a
-		width: 399px
-		height: 60px
-		background: #888
+		width: 400px
+		height: 48px
+		background: $quote-normal
 		text-align: center
 		color: $bg-color
 		border-left: $site-margin solid $bg-color
@@ -80,12 +95,17 @@
 		float: left
 		text-transform: uppercase
 		font-size: 24px
-		line-height: 1.7
+		line-height: 2.2
 		font-weight: 700
+		text-decoration: none
+		transition: background-color 1s  ease
+
+		&:hover
+			background: $quote-hover
 
 	.services_quote_right
 		background: desaturate(lighten($prime-color, 4), 78)
-		width: calc(50% - 200px)
+		width: 50%
 		height: 60px
 		display: block
 		border-right: $site-margin solid $bg-color
