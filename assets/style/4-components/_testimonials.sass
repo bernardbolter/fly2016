@@ -19,7 +19,7 @@
 .test_image_wrap
 	width: 300px
 	margin: $site-margin $site-margin 0 0
-	background: #cbe3ae
+	background: lighten($test_cards, 15)
 
 	img
 		width: 90%
@@ -27,11 +27,11 @@
 
 .test_image_text_wrap
 	width: 300px
-	height: 150px
+	height: 90px
 	position: relative
 
 	svg
-		fill: #cbe3ae
+		fill: lighten($test_cards, 15)
 		position: absolute
 		width: 100%
 		height: 100%
@@ -39,22 +39,29 @@
 	h3
 		margin: 0
 		padding: 0
+		font-size: 18px
 
 	p
 		margin: 0
 		padding: 0
 		text-align: right
-		line-height: 1.5
+		line-height: 1.4
+		font-size: 12px
+
+	.test_grey
+		opacity: 0.5
+		font-size: 16px
+
 
 .test_text_position
 	position: absolute
 	z-index: 900
 	right: 10px
-	margin: -5px 10px 0 0
+	margin: -10px 5px 0 0
 
 .test_fill
 	width: 100px
-	background: #afafaf
+	background: desaturate(lighten($prime-color, 45), 78)
 
 .test_left
 	width: 50%
@@ -65,10 +72,34 @@
 .testimonial_text
 	width: 49.6%
 	margin: 0
-	background: #afafaf
+	background: desaturate(lighten($prime-color, 45), 78)
 
 	p
 		margin: 10% 5% 5% -60px
-		font-size: 20px
+		font-size: 18px
 		max-width: 600px
 		float: left
+		line-height: 1.5
+
+
+.testimonial_more
+	width: 100%
+	padding: 0
+	display: flex
+	flex-direction: row
+	justify-content: flex-end
+	height: 150px
+
+.test_more_left
+	width: auto
+
+.test_more_fill
+	width: 100px
+	background: desaturate(lighten($prime-color, 45), 78)
+	height: 150px
+
+.test_more_link
+	width: 49.6%
+	margin: 0
+	background: desaturate(lighten($prime-color, 45), 78)
+	height: 150px
