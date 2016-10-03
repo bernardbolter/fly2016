@@ -7,19 +7,34 @@
 
 .services_wrap
 	display: flex
-	flex-direction: row
+	flex-direction: column
+
+	+min-screen($nav-break)
+		flex-direction: row
 
 	.services__flight-ferry
-		width: 50%
+		width: 100%
 		background: desaturate(darken($prime-color, 8), 67)
-		border-left: $site-margin solid $bg-color
-		border-right: ($site-margin / 2) solid $bg-color
+		border-left: $site-margin-small solid $bg-color
+		border-right: $site-margin-small solid $bg-color
+		border-bottom: $site-margin-small solid $bg-color
+
+		+min-screen($nav-break)
+			width: 50%
+			border-left: $site-margin solid $bg-color
+			border-right: ($site-margin / 2) solid $bg-color
+			border-bottom: none
 
 		.ferry_wrap
-			width: 70%
-			max-width: 500px
-			float: right
-			margin: 10px 40px 10px 0
+			width: 90%
+			float: none
+			margin: 40px auto 30px
+
+			+min-screen($nav-break)
+				width: 70%
+				max-width: 500px
+				float: right
+				margin: 10px 40px 10px 0
 
 		h2
 			font-weight: 700
@@ -38,16 +53,26 @@
 			text-indent: 25px
 
 	.services__container-shipping
-		width: 50%
+		width: 100%
 		background: desaturate(lighten($prime-color, 4), 78)
-		border-right: $site-margin solid $bg-color
-		border-left: ($site-margin / 2) solid $bg-color
+		border-right: $site-margin-small solid $bg-color
+		border-left: $site-margin-small solid $bg-color
+
+		+min-screen($nav-break)
+			width: 50%
+			border-right: $site-margin solid $bg-color
+			border-left: ($site-margin / 2) solid $bg-color
 
 		.container_wrap
-			width: 70%
-			max-width: 500px
-			margin: 20px 0 0 40px
-			float: left
+			width: 90%
+			float: none
+			margin: 40px auto 30px
+
+			+min-screen($nav-break)
+				width: 70%
+				max-width: 500px
+				float: left
+				margin: 20px 0 10px 40px
 
 		h2
 			font-weight: 700
@@ -73,31 +98,41 @@
 	flex-direction: row
 	justify-content: center
 
-
 	.services_quote_left
-		background: desaturate(darken($prime-color, 8), 67)
-		height: 60px
+		background: desaturate(lighten($prime-color, 4), 78)
 		width: 50%
 		display: block
 		float: left
-		border-left: $site-margin solid $bg-color
+		border-left: $site-margin-small solid $bg-color
+
+		+min-screen($nav-break)
+			border-left: $site-margin solid $bg-color
+			background: desaturate(darken($prime-color, 8), 67)
 
 	a
 		width: 400px
-		height: 48px
 		background: $quote-normal
 		text-align: center
 		color: $bg-color
-		border-left: $site-margin solid $bg-color
-		border-top: $site-margin solid $bg-color
-		border-right: $site-margin solid $bg-color
+		border-left: $site-margin-small solid $bg-color
+		border-top: $site-margin-small solid $bg-color
+		border-right: $site-margin-small solid $bg-color
 		float: left
 		text-transform: uppercase
-		font-size: 24px
-		line-height: 2.2
+		font-size: 16px
+		line-height: 2.4
+		letter-spacing: 0.05em
 		font-weight: 700
 		text-decoration: none
 		transition: background-color 1s  ease
+
+		+min-screen($nav-break)
+			border-left: $site-margin solid $bg-color
+			border-top: $site-margin solid $bg-color
+			border-right: $site-margin solid $bg-color
+			font-size: 24px
+			line-height: 2.2
+			letter-spacing: 0
 
 		&:hover
 			background: $quote-hover
@@ -105,7 +140,11 @@
 	.services_quote_right
 		background: desaturate(lighten($prime-color, 4), 78)
 		width: 50%
-		height: 60px
-		display: block
-		border-right: $site-margin solid $bg-color
-		float: left
+		border-right: $site-margin-small solid $bg-color
+
+		+min-screen($nav-break)
+			background: desaturate(lighten($prime-color, 4), 78)
+			width: 50%
+			display: block
+			border-right: $site-margin solid $bg-color
+			float: left

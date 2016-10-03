@@ -3,11 +3,20 @@
   background: desaturate(lighten($prime-color, 4), 78)
   margin-top: -33px
   display: flex
-  flex-direction: row
+  flex-direction: column
+
+  +min-screen($nav-break)
+    display: flex
+    flex-direction: row
 
 .about_left
-  width: 60%
-  margin-top: 50px
+  width: 100%
+  padding: 30px 0 0 10px
+
+  +min-screen($nav-break)
+    width: 60%
+    margin-top: 50px
+
 
 .about_left_content
   max-width: 700px
@@ -17,17 +26,36 @@
   img
     float: left
     margin: 0px 30px 15px 0
+    width: 40%
+
+    +min-screen($nav-break)
+      width: auto
 
   p
-    font-size: 18px
+    font-size: 14px
     color: $bg-color
-    margin: 20px
-    line-height: 1.6
-    text-indent: 20px
+    margin: 15px
+    line-height: 1.8
+    text-indent: 10px
+
+    +min-screen($nav-break)
+      font-size: 18px
+      color: $bg-color
+      margin: 20px
+      line-height: 1.6
+      text-indent: 20px
 
 .about_right
-  width: 40%
-  margin: 40px 0 40px 10px
+  width: 100%
+  margin: 0
+  padding: 20px
+  border-top: 1px solid white
+
+  +min-screen($nav-break)
+    width: 40%
+    margin: 40px 0 40px 10px
+    border-top: none
+    padding: none
 
   p
     font-size: 14px

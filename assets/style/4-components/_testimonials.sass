@@ -1,40 +1,91 @@
 .testimonial_wrap
-	border-right: $site-margin solid white
-	margin: -33px 0 0 0
+	border-right: $site-margin-small solid $bg-color
+	border-left: $site-margin-small solid $bg-color
+	margin: -36px 0 0 0
 	padding: 0
+
+	+min-screen($nav-break)
+		border-right: $site-margin solid white
+		border-left: none
+		margin: -33px 0 0 0
+		padding: 0
 
 .testimonial_template
 	width: 100%
 	padding: 0
 	display: flex
-	flex-direction: row
+	flex-direction: column
 	justify-content: flex-end
 
-.testimonial_img
-	width: 312px
-	margin-top: 50px
+	+min-screen($nav-break)
+		flex-direction: row
+
+.test_left
+	width: 100%
 	display: flex
-	flex-direction: column
+	flex-direction: row
+	justify-content: center
+	border-top: $site-margin-small solid $bg-color
+	background: lighten($test_cards, 15)
+	padding-top: 30px
+
+	+min-screen($nav-break)
+		width: 40%
+		display: flex
+		flex-direction: row
+		justify-content: flex-end
+		background: none
+		padding-top: none
+
+.testimonial_img
+	width: 100%
+	margin-top: 0
+	display: flex
+	flex-direction: row
+
+	+min-screen($nav-break)
+		flex-direction: column
+		width: 312px
+		margin-top: 50px
+		display: flex
 
 .test_image_wrap
-	width: 300px
-	margin: $site-margin $site-margin 0 0
+	width: 40%
+	margin: 0
 	background: lighten($test_cards, 15)
+
+	+min-screen($nav-break)
+		width: 300px
+		background: lighten($test_cards, 15)
 
 	img
 		width: 90%
 		margin: 5%
 
 .test_image_text_wrap
-	width: 300px
-	height: 90px
+	width: 50%
+	height: auto
 	position: relative
+	background: lighten($test_cards, 15)
+	text-align: left
+	padding: 18px 0 0 10px
+
+	+min-screen($nav-break)
+		width: 300px
+		height: 90px
+		position: relative
+		background: none
+		padding: 0
 
 	svg
 		fill: lighten($test_cards, 15)
 		position: absolute
 		width: 100%
 		height: 100%
+		display: none
+
+		+min-screen($nav-break)
+			display: block
 
 	h3
 		margin: 0
@@ -44,9 +95,12 @@
 	p
 		margin: 0
 		padding: 0
-		text-align: right
+		text-align: left
 		line-height: 1.4
 		font-size: 12px
+
+		+min-screen($nav-break)
+			text-align: right
 
 	.test_grey
 		opacity: 0.5
@@ -54,33 +108,46 @@
 
 
 .test_text_position
-	position: absolute
+	position: relative
 	z-index: 900
 	right: 10px
-	margin: -10px 5px 0 0
+	margin: 0
+
+	+min-screen($nav-break)
+		position: absolute
+		z-index: 900
+		right: 10px
+		margin: -10px 5px 0 0
 
 .test_fill
-	width: 100px
-	background: desaturate(lighten($prime-color, 45), 78)
+	display: none
 
-.test_left
-	width: 50%
-	display: flex
-	flex-direction: row
-	justify-content: flex-end
+	+min-screen($nav-break)
+		width: 83px
+		background: desaturate(lighten($prime-color, 45), 78)
+		display: block
 
 .testimonial_text
-	width: 49.6%
+	width: 100%
 	margin: 0
 	background: desaturate(lighten($prime-color, 45), 78)
+	border-top: $site-margin-small solid $bg-color
+
+	+min-screen($nav-break)
+		width: 50%
+		border-top: none
 
 	p
-		margin: 10% 5% 5% -60px
+		margin: 5%
 		font-size: 18px
-		max-width: 600px
-		float: left
 		line-height: 1.5
 
+		+min-screen($nav-break)
+			margin: 10% 5% 5% -60px
+			font-size: 18px
+			max-width: 600px
+			float: left
+			line-height: 1.5
 
 .testimonial_more
 	width: 100%
@@ -88,18 +155,36 @@
 	display: flex
 	flex-direction: row
 	justify-content: flex-end
-	height: 150px
+	height: 50px
+	background: desaturate(lighten($prime-color, 45), 78)
+
+	+min-screen($nav-break)
+		background: none
+		height: 150px
 
 .test_more_left
 	width: auto
+	display: none
+
+	+min-screen($nav-break)
+		width: 40%
+		display: block
 
 .test_more_fill
-	width: 100px
-	background: desaturate(lighten($prime-color, 45), 78)
-	height: 150px
+	display: none
+
+	+min-screen($nav-break)
+		width: 83px
+		background: desaturate(lighten($prime-color, 45), 78)
+		height: 150px
+		display: block
 
 .test_more_link
-	width: 49.6%
-	margin: 0
-	background: desaturate(lighten($prime-color, 45), 78)
-	height: 150px
+	display: none
+
+	+min-screen($nav-break)
+		width: 50%
+		margin: 0
+		background: desaturate(lighten($prime-color, 45), 78)
+		height: 150px
+		display: block

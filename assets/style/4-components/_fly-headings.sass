@@ -2,20 +2,38 @@
 	width: 100%
 	display: block
 	text-align: center
-	margin: -25px auto 0
+	margin: -28px auto 0
 	z-index: 400
 	position: relative
 
+	+min-screen($nav-break)
+		margin: -35px auto 0
+
 	.fly-text
 		text-align: center
-		width: 200px
-		padding: 7px 0 5px
-		border: $bg-color solid $site-margin
+		width: 150px
+		padding: 8px 0 5px
+		border: $site-margin-small solid $bg-color
 		background: $prime-color
 		color: #fff
 		display: inline-block
 		margin: 0 auto
 		text-transform: uppercase
-		font-size: 24px
+		font-size: 16px
 		letter-spacing: 0.1em
-		height: 30px
+		line-height: 1.5
+
+		+min-screen($nav-break)
+			border: $site-margin solid $bg-color
+			width: 200px
+			font-size: 24px
+			padding: 7px 0 5px
+
+.fly-hr
+	width: 100%
+	height: $site-margin-small
+	background: $bg-color
+	display: block
+
+	+min-screen($nav-break)
+		height: $site-margin

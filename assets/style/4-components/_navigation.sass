@@ -24,11 +24,15 @@
 				color: $nav-color
 
 	.logo
-		width: 224px
-		height: 224px
+		width: 174px
+		height: 174px
 		margin: 0
 		padding: 0
 		position: relative
+
+		+min-screen(700px)
+			width: 224px
+			height: 224px
 
 		a
 			position:relative
@@ -40,11 +44,16 @@
 			svg
 				top: 0
 				left: 0
-				height: 200px
-				width: 200px
+				height: 150px
+				width: 150px
 				position: absolute
 				fill: $prime-color
-				border: 12px solid $bg-color
+				border: $site-margin-small solid $bg-color
+
+				+min-screen($nav-break)
+					height: 200px
+					width: 200px
+					border: $site-margin solid $bg-color
 
 	.contact
 		width: 200px
