@@ -1,8 +1,11 @@
 .services
 	width: 100%
 	padding: 0
-	margin: -37px 0 0 0
+	margin: -31px 0 0 0
 	border-top: $site-margin solid $bg-color
+
+	+min-screen($nav-break)
+		margin: -35px 0 0 0
 
 
 .services_wrap
@@ -38,19 +41,27 @@
 
 		h2
 			font-weight: 700
-			font-size: 35px
+			font-size: 24px
 			color: $bg-color
 			text-align: center
 			letter-spacing: 0.1em
 			line-height: 1.7
+			opacity: 0.9
+
+			+min-screen($nav-break)
+				font-size: 35px
 
 		p
 			color: $bg-color
-			font-size: 18px
+			font-size: 15px
 			font-weight: 400
 			letter-spacing: 0.1em
-			line-height: 1.6
+			line-height: 1.8
 			text-indent: 25px
+
+			+min-screen($nav-break)
+				font-size: 18px
+				line-height: 1.6
 
 	.services__container-shipping
 		width: 100%
@@ -76,19 +87,27 @@
 
 		h2
 			font-weight: 700
-			font-size: 35px
+			font-size: 24px
 			color: $bg-color
 			text-align: center
 			letter-spacing: 0.1em
 			opacity: 0.9
 
+			+min-screen($nav-break)
+				font-size: 35px
+
 		p
 			color: $bg-color
-			font-size: 18px
+			font-size: 15px
 			font-weight: 400
 			letter-spacing: 0.1em
-			line-height: 1.6
-			text-indent: 25px
+			line-height: 1.8
+			text-indent: 15px
+
+			+min-screen($nav-break)
+				font-size: 18px
+				line-height: 1.6
+				text-indent: 25px
 
 .services_quote_rap
 	width: 100%

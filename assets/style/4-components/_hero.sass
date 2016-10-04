@@ -5,7 +5,7 @@
 	height: 420px
 	max-width: 1000px
 	margin: 0 auto
-	margin-top: -50px
+	margin-top: -40px
 	background: url(./img/hero_plane.jpg) no-repeat center center
 	background-size: cover
 	position: relative
@@ -17,6 +17,7 @@
 		width: 90%
 		border-right: none
 		border-left: none
+		margin-top: -50px
 
 	+min-screen($hero-break)
 		width: 75%
@@ -29,13 +30,16 @@
 		color: #a1d7e1
 
 	h1
-		font-size: 50px
+		font-size: 30px
 		text-align: right
 		color: #ededed
 		margin: 0
 		padding: 0
 		text-transform: uppercase
 		line-height: 1
+
+		+min-screen($mid-hero-break)
+			font-size: 45px
 
 		+min-screen($nav-break)
 			font-size: 60px
@@ -45,14 +49,23 @@
 
 .hero_text_lower
 	margin: 0
-	padding: 25px 0 0 0
+	padding: 125px 0 0 0
+
+	+min-screen($nav-break)
+		padding: 10px 0 0 0
 
 	ul
 		list-style: none
 
 	h2
 		color: #ededed
-		font-size: 24px
+		font-size: 14px
 		line-height: 1
 		font-weight: 400
 		margin: 10px 0
+
+		+min-screen($nav-break)
+			font-size: 22px
+
+		+min-screen($hero-break)
+			font-size: 30px

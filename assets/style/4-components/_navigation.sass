@@ -5,16 +5,63 @@
 	width: 100%
 	display: flex
 	flex-direction: row
-	justify-content: center
+	justify-content: space-between
 	position: relative
 	z-index: 500
+
+	+min-screen($mid-hero-break)
+		justify-content: center
+
+	.mobile_menu_wrap
+		order: 2
+
+		+min-screen($mid-hero-break)
+			order: 1
+
+	.button_container
+		display: block
+		text-decoration: none
+		color: #888
+		font-size: 24px
+		font-weight: 700
+		margin: 70px 30px 0
+		text-transform: uppercase
+
+	 +min-screen($mid-hero-break)
+		 display: none
+
+	.nav_over
+		width: 100%
+		padding-top: 150px
+
+		li
+			text-align: center
+			margin: 0
+			font-size: 30px
+			letter-spacing: 0.05em
+			color: #fff
+
 
 	.navigation
 		width: 200px
 		margin: 0
 		padding: 0
-		padding-top: 87px
+		padding-top: 60px
 		list-style: none
+		display: none
+
+		+min-screen($mid-hero-break)
+			display: block
+			padding-top: 25px
+
+		+min-screen($nav-break)
+			padding-top: 60px
+
+		.mobile_close
+			display: block
+
+			+min-screen($mid-hero-break)
+				display: none
 
 		li
 			text-align: right
@@ -24,15 +71,17 @@
 				color: $nav-color
 
 	.logo
-		width: 174px
-		height: 174px
+		width: 150px
+		height: 150px
 		margin: 0
 		padding: 0
 		position: relative
+		order: 1
 
-		+min-screen(700px)
-			width: 224px
-			height: 224px
+		+min-screen($nav-break)
+			width: 200px
+			height: 200px
+			order: 2
 
 		a
 			position:relative
@@ -59,7 +108,15 @@
 		width: 200px
 		margin: 0
 		padding: 0
-		padding-top: 130px
+		padding-top: 72px
+		display: none
+		order: 3
+
+		+min-screen($mid-hero-break)
+			display: block
+
+		+min-screen($nav-break)
+			padding-top: 107px
 
 		li
 			list-style: none

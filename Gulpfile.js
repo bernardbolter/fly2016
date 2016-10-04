@@ -61,10 +61,6 @@ gulp.task('html-in', function () {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(insertLines({
-      'before': /<\/body>$/,
-      'lineBefore': '<script src="http://localhost:8080/mashup.js"></script>'
-    }))
     .pipe(gulp.dest('./builds/inbound/'))
     .pipe(connect.reload());
 });
@@ -74,10 +70,6 @@ gulp.task('html-out', function () {
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
-    }))
-    .pipe(insertLines({
-      'before': /<\/body>$/,
-      'lineBefore': '<script src="mashup.js"></script>'
     }))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./builds/outbound/'));
@@ -154,6 +146,18 @@ gulp.task('svg-out', function() {
     	.pipe(gulp.dest('./builds/outbound/svgs'))
 });
 
+// MOVE JS ---------------------------------------------------->>>>>>>>
+
+gulp.task('js-move-in', function () {
+  gulp.src(path.JS)
+  .pipe(gulp.dest('./builds/inbound/js'))
+})
+
+gulp.task('js-move-out', function () {
+  gulp.src(path.JS)
+  .pipe(gulp.dest('./builds/outbound/js'))
+})
+
 // IMAGE TASKS ---------------------------------------------------->>>>>>>>
 
 gulp.task('img-in', function() {
@@ -206,8 +210,8 @@ gulp.task('watch', function() {
   gulp.watch([path.SVG], ['svg-in', 'html-in']);
 });
 
-gulp.task('default', ['svg-in', 'html-in', 'style-in', 'webpack-in', 'img-in', 'fonts-in', 'connect', 'watch']);
+gulp.task('default', ['svg-in', 'html-in', 'style-in', 'js-move-in', 'img-in', 'fonts-in', 'connect', 'watch']);
 
-gulp.task('outbound', ['svg-out', 'html-out', 'style-out', 'webpack-out', 'images-out', 'fonts-out']);
+gulp.task('outbound', ['svg-out', 'html-out', 'style-out', 'js-move-out', 'images-out', 'fonts-out']);
 
 gulp.task('clean', ['clean-in', 'clean-out']);

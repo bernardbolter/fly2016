@@ -7,7 +7,7 @@
 	+min-screen($nav-break)
 		border-right: $site-margin solid white
 		border-left: none
-		margin: -33px 0 0 0
+		margin: -31px 0 0 0
 		padding: 0
 
 .testimonial_template
@@ -41,18 +41,29 @@
 	width: 100%
 	margin-top: 0
 	display: flex
-	flex-direction: row
+	flex-direction: column
+
+	+min-screen($mid-hero-break)
+		width: 100%
+		margin-top: 0
+		display: flex
+		flex-direction: row
 
 	+min-screen($nav-break)
-		flex-direction: column
 		width: 312px
 		margin-top: 50px
 		display: flex
+		flex-direction: column
 
 .test_image_wrap
-	width: 40%
-	margin: 0
+	width: 100%
+	padding: 0
 	background: lighten($test_cards, 15)
+
+	+min-screen($mid-hero-break)
+		width: 40%
+		margin: 0
+		background: lighten($test_cards, 15)
 
 	+min-screen($nav-break)
 		width: 300px
@@ -63,12 +74,19 @@
 		margin: 5%
 
 .test_image_text_wrap
-	width: 50%
+	width: 100%
 	height: auto
+	display: block
 	position: relative
 	background: lighten($test_cards, 15)
-	text-align: left
-	padding: 18px 0 0 10px
+
+	+min-screen($mid-hero-break)
+		width: 50%
+		height: auto
+		position: relative
+		background: lighten($test_cards, 15)
+		text-align: left
+		padding: 18px 0 0 10px
 
 	+min-screen($nav-break)
 		width: 300px
@@ -91,13 +109,20 @@
 		margin: 0
 		padding: 0
 		font-size: 18px
+		text-align: right
+
+		+min-screen($mid-hero-break)
+			text-align: left
 
 	p
 		margin: 0
 		padding: 0
-		text-align: left
+		text-align: right
 		line-height: 1.4
 		font-size: 12px
+
+		+min-screen($mid-hero-break)
+			text-align: left
 
 		+min-screen($nav-break)
 			text-align: right
@@ -109,9 +134,13 @@
 
 .test_text_position
 	position: relative
-	z-index: 900
-	right: 10px
-	margin: 0
+	padding: 0 20px 20px
+
+	+min-screen($mid-hero-break)
+		position: relative
+		z-index: 900
+		right: 10px
+		margin: 0
 
 	+min-screen($nav-break)
 		position: absolute
