@@ -1,13 +1,22 @@
 .st2
 	fill: $prime-color
 
+.nav-fixed
+	width: 100%
+	position: fixed !important
+	top: -130px
+	background: white
+	top: -137px !important
+
 .nav
 	width: 100%
 	display: flex
 	flex-direction: row
 	justify-content: space-between
-	position: relative
-	z-index: 500
+	position: absolute
+	z-index: 1000
+	top: 0
+
 
 	+min-screen($mid-hero-break)
 		justify-content: center
@@ -41,9 +50,19 @@
 			letter-spacing: 0.05em
 			color: #fff
 
+	.navigation-fixed
+		background: white
+		margin-top: 50px !important
+		padding-right: 6px !important
+		width: 50% !important
+
+		li
+			display: inline-block
+			float: right
+			margin: 59px 0 0 20px
 
 	.navigation
-		width: 200px
+		width: 50%
 		margin: 0
 		padding: 0
 		padding-top: 60px
@@ -56,6 +75,7 @@
 
 		+min-screen($nav-break)
 			padding-top: 60px
+			width: 200px
 
 		.mobile_close
 			display: block
@@ -69,6 +89,12 @@
 			a
 				text-decoration: none
 				color: $nav-color
+
+				&:hover
+					text-decoration: underline
+
+	.logo-fixed
+		width: 240px !important
 
 	.logo
 		width: 150px
@@ -104,8 +130,18 @@
 					width: 200px
 					border: $site-margin solid $bg-color
 
+	.contact-fixed
+		background: white
+		margin-top: 50px !important
+		padding-top: 0 !important
+		width: 50% !important
+
+		li
+			display: inline-block
+			margin: 123px 0 0 20px
+
 	.contact
-		width: 200px
+		width: 50%
 		margin: 0
 		padding: 0
 		padding-top: 72px
@@ -117,6 +153,7 @@
 
 		+min-screen($nav-break)
 			padding-top: 107px
+			width: 200px
 
 		li
 			list-style: none

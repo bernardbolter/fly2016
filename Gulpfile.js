@@ -208,6 +208,7 @@ gulp.task('watch', function() {
   gulp.watch([path.HTML], ['html-in']);
   gulp.watch([path.STYLESHEETS], ['style-in']);
   gulp.watch([path.SVG], ['svg-in', 'html-in']);
+  gulp.watch([path.JS], ['js-move-in']);
 });
 
 gulp.task('default', ['svg-in', 'html-in', 'style-in', 'js-move-in', 'img-in', 'fonts-in', 'connect', 'watch']);
