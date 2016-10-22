@@ -6,7 +6,13 @@
 	position: fixed !important
 	top: -130px
 	background: white
-	top: -137px !important
+	top: -100px !important
+
+	+min-screen($mid-hero-break)
+		top: -100px !important
+
+	+min-screen($nav-break)
+		top: -149px !important
 
 .nav
 	width: 100%
@@ -26,6 +32,10 @@
 
 		+min-screen($mid-hero-break)
 			order: 1
+			width: 50%
+
+		+min-screen($fixed-nav-break)
+			display: none
 
 	.button_container
 		display: block
@@ -33,11 +43,24 @@
 		color: #888
 		font-size: 24px
 		font-weight: 700
-		margin: 70px 30px 0
+		margin: 70px 10px 0
 		text-transform: uppercase
+		float: right
 
-	 +min-screen($mid-hero-break)
-		 display: none
+		+min-screen($nav-break)
+			margin: 110px 10px 0
+
+	.button-fixed
+		margin: 120px 30px 0 0
+		
+		+min-screen($mid-hero-break)
+			margin: 120px 10px 0 0
+
+		+min-screen($nav-break)
+			margin: 165px 10px 0
+
+		+min-screen($fixed-nav-break)
+			display: none
 
 	.nav_over
 		width: 100%
@@ -70,12 +93,11 @@
 		display: none
 
 		+min-screen($mid-hero-break)
-			display: block
 			padding-top: 25px
 
-		+min-screen($nav-break)
+		+min-screen($fixed-nav-break)
 			padding-top: 60px
-			width: 200px
+			display: block
 
 		.mobile_close
 			display: block
@@ -95,6 +117,7 @@
 
 	.logo-fixed
 		width: 240px !important
+		margin: 10px 0 0 0 !important
 
 	.logo
 		width: 150px
@@ -103,11 +126,15 @@
 		padding: 0
 		position: relative
 		order: 1
+		flex-basis: 150px
+		flex-shrink: 0
 
 		+min-screen($nav-break)
 			width: 200px
 			height: 200px
 			order: 2
+			flex-basis: 200px
+			flex-shrink: 0
 
 		a
 			position:relative
@@ -133,12 +160,18 @@
 	.contact-fixed
 		background: white
 		margin-top: 50px !important
-		padding-top: 0 !important
+		padding-top: 70px !important
 		width: 50% !important
 
-		li
-			display: inline-block
-			margin: 123px 0 0 20px
+		+min-screen($nav-break)
+			padding-top: 117px !important
+
+		+min-screen($fixed-nav-break)
+			padding-top: 0 !important
+
+			li
+				display: inline-block
+				margin: 123px 0 0 13px
 
 	.contact
 		width: 50%
@@ -153,7 +186,6 @@
 
 		+min-screen($nav-break)
 			padding-top: 107px
-			width: 200px
 
 		li
 			list-style: none

@@ -1,10 +1,13 @@
 .fly-heading
 	width: 100%
 	display: block
-	text-align: center
+	text-align: left
 	margin: -28px auto 0
 	z-index: 400
 	position: relative
+
+	+min-screen($mid-hero-break)
+		text-align: center
 
 	+min-screen($nav-break)
 		margin: -35px auto 0

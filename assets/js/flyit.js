@@ -9,11 +9,12 @@ $(window).scroll(function() {
     $(".navigation").addClass("navigation-fixed");
     $(".contact").addClass("contact-fixed");
     $(".logo").addClass("logo-fixed");
+    $("#toggle").addClass("button-fixed");
   } else {
     $(".nav").removeClass("nav-fixed");
     $(".navigation").removeClass("navigation-fixed");
     $(".contact").removeClass("contact-fixed");
-    $(".logo").removeClass("logo-fixed");
+    $("#toggle").removeClass("button-fixed");
   }
 });
 
@@ -26,4 +27,8 @@ $('a[href^="#"]').on('click', function(event) {
             scrollTop: target.offset().top - 50
         }, 1000);
     }
+});
+
+$(".close_menu").on('click', function(event) {
+  $('#toggle').removeClass('active');
 });
