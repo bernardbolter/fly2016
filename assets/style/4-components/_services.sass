@@ -20,7 +20,7 @@
 		background: desaturate(darken($prime-color, 8), 67)
 		border-left: $site-margin-small solid $bg-color
 		border-right: $site-margin-small solid $bg-color
-		border-bottom: $site-margin-small solid $bg-color
+		padding-bottom: 60px
 
 		+min-screen($nav-break)
 			width: 50%
@@ -64,13 +64,14 @@
 				line-height: 1.6
 
 	.services__container-shipping
-		width: 100%
-		background: desaturate(lighten($prime-color, 4), 78)
-		border-right: $site-margin-small solid $bg-color
-		border-left: $site-margin-small solid $bg-color
+		display: none
 
 		+min-screen($nav-break)
+			display: block
 			width: 50%
+			background: url(img/cessna_insert.jpg) no-repeat
+			background-size: cover
+			background-position: center 50%
 			border-right: $site-margin solid $bg-color
 			border-left: ($site-margin / 2) solid $bg-color
 
@@ -129,7 +130,7 @@
 			background: desaturate(darken($prime-color, 8), 67)
 
 	a
-		width: 400px
+		width: 80%
 		background: $quote-normal
 		text-align: center
 		color: $bg-color
@@ -144,8 +145,11 @@
 		font-weight: 700
 		text-decoration: none
 		transition: background-color 1s  ease
+		align-self: flex-end
+		position: absolute
 
 		+min-screen($nav-break)
+			width: 400px
 			border-left: $site-margin solid $bg-color
 			border-top: $site-margin solid $bg-color
 			border-right: $site-margin solid $bg-color

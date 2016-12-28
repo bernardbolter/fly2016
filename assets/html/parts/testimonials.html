@@ -3,83 +3,40 @@
 </div>
 
 <div class="testimonial_wrap">
-	<div class="testimonial_template">
-		<div class="test_left">
-			<div class="testimonial_img">
-				<div class="test_image_wrap">
-					<img src="img/schlotzhauer_plane.jpg" />
-				</div>
-				<div class="test_image_text_wrap">
-					<svg class="testimonial-angle-svg" viewBox="0 0 300 90">
-						<use xlink:href="#svg-testimonial-angle"></use>
-					</svg>
-					<div class="test_text_position">
-						<h3><span class="test_grey">Customer:</span> Robert Schlotzhauer</h3>
-						<p>bobjr2010@gmail.com</p>
-						<p>from Mesa, AZ (KFFZ)</p>
-						<p>to Lee's Summit, MO (KLXT)</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="test_fill">
-		</div>
-		<div class="testimonial_text">
-			<p>"After talking with Aaron at some length regarding his experience and diversification of aircraft he had flown I decided that he had the capability of bringing the aircraft back safely.  Fortunately for me Aaron had the presence of mind to check with the FAA to verify registration of the aircraft and it was disclosed that the registration has been canceled just two weeks prior to my contacting him.  After going through the FAA reregistration of the aircraft Aaron was finally able to get the aircraft back just as he said he would in one day.  Aaron gave me complete records of all expenditures and performance of the aircraft and did everything he said he would do.  I was very impressed with the thoroughness of Aaron's business expertise and the way he treated our aircraft.  I would recommend this service to anyone who had need to move an aircraft from point A to point B."</p>
-		</div>
-	</div>
+	<div id="testimonial_template">
 
-	<div class="testimonial_template">
-		<div class="test_left">
-			<div class="testimonial_img">
-				<div class="test_image_wrap">
-					<img src="img/moreton_plane.jpg" />
-				</div>
-				<div class="test_image_text_wrap">
-					<svg class="testimonial-angle-svg" viewBox="0 0 300 90">
-						<use xlink:href="#svg-testimonial-angle"></use>
-					</svg>
-					<div class="test_text_position">
-						<h3><span class="test_grey">Customer:</span> Bruce Moreton</h3>
-						<p>bdmoreto@gmail.com</p>
-						<p>from Frederick, MD (KFDK</p>
-						<p>to Burlington, WA (KBVS)</p>
+	<script id="template" type="text/x-handlebars-template">
+		{{#each this}}
+			<div class="testimonial_template">
+				<div class="test_left">
+					<div class="testimonial_img">
+						<div class="test_image_wrap">
+							<img src="img/{{plane}}" />
+						</div>
+						<div class="test_image_text_wrap">
+							<svg class="testimonial-angle-svg" viewBox="0 0 300 90">
+								<use xlink:href="#svg-testimonial-angle"></use>
+							</svg>
+							<div class="test_text_position">
+								<h3><span class="test_grey">Customer:</span> {{customer}}</h3>
+								<p>{{email}}</p>
+								<p>{{from}}</p>
+								<p>{{to}}</p>
+							</div>
+						</div>
 					</div>
 				</div>
+				<div class="test_fill">
+				</div>
+				<div class="testimonial_text">
+					<p>"{{testimonial}}"</p>
+				</div>
 			</div>
-		</div>
-		<div class="test_fill">
-		</div>
-		<div class="testimonial_text">
-			<p>"I contacted FlyIt4U with the request to relocate my Cessna 172 from Frederick, Maryland to Skagit Valley in Washington state.  Aaron was quick to reply and provided a very clear plan and set of expectations for accomplishing the goal.  His input was timely, communication during the planning and preparation phase was complete and we met in Frederick, Maryland on the planned departure date.  Aaron kept me advised throughout the flight and delivered the aircraft in 3 days to the designated location. He encountered a thunderstorm with hail while on the ground in Omaha and made quick plans for a temporary hangar, while keeping me in the loop by instant messaging.  I was very impressed with his professionalism throughout the process."</p>
-		</div>
-	</div>
+			{{/each}}
+		</script>
 
-	<div class="testimonial_template">
-		<div class="test_left">
-			<div class="testimonial_img">
-				<div class="test_image_wrap">
-					<img src="img/walker_plane.jpg" />
-				</div>
-				<div class="test_image_text_wrap">
-					<svg class="testimonial-angle-svg" viewBox="0 0 300 90">
-						<use xlink:href="#svg-testimonial-angle"></use>
-					</svg>
-					<div class="test_text_position">
-						<h3><span class="test_grey">Customer:</span> Brad Walker</h3>
-						<p>onsite@platinum.ca </p>
-						<p>from Chino, CA (KCNO)</p>
-						<p>to Carlyle, SK (CJQ3)</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="test_fill">
-		</div>
-		<div class="testimonial_text">
-			<p>"I recently purchased my first aircraft (Cessna Cardinal) in California and needed a ferry pilot to fly it to Canada.  After making initial contact with Aaron, I was left with the impression that I was dealing with a professional.  From start to finish, he made the process far less onerous than I had anticipated that it was going to be. Great communication, service and value.  FlyIt4U will be my first choice to deliver aircraft in the future."</p>
-		</div>
-	</div>
+	</div> <!-- testimonial template -->
+
 
 	<div class="testimonial_more">
 		<div class="test_more_left">

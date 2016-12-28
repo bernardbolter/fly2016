@@ -15,9 +15,6 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     // JS
-    webpack = require('webpack'),
-    webpackStream = require('webpack-stream'),
-    webpackDevConfig = require('./webpack.dev.config'),
     uglify = require('gulp-uglify'),
     // IMAGES
     imagemin = require('gulp-imagemin'),
@@ -27,8 +24,7 @@ var gulp = require('gulp'),
     // WATCH and CONNECT
     connect = require('gulp-connect'),
     livereload = require('gulp-livereload'),
-    watch = require('gulp-watch'),
-    WebpackDevServer = require('webpack-dev-server');
+    watch = require('gulp-watch')
 
 var path = {
   HTML: [
@@ -42,7 +38,10 @@ var path = {
   ],
   ENTRY: './assets/js/gateway.js',
   SVG: './assets/svgs/*.svg',
-  JS: './assets/js/**/*.js',
+  JS: [
+    './assets/js/vendors/*.js',
+    './assets/js/*.js'
+  ],
   IMAGES: './assets/images/*',
   FONTS: [
     './assets/fonts/*.woff2',
@@ -98,32 +97,21 @@ gulp.task('style-out', function() {
 
 // JAVASCRIPT TASKS ---------------------------------------------------->>>>>>>>
 
-gulp.task("webpack-in", function(callback) {
-	// modify some webpack config options
-	var myConfig = Object.create(webpackDevConfig);
-
-	// Start a webpack-dev-server
-	new WebpackDevServer(webpack(myConfig), {
-    contentBase: "http://localhost:9091/",
-    hot: true,
-    historyApiFallback: true,
-    proxy: {
-      "*": "http://localhost:9091"
-    },
-		publicPath: "http://localhost:8080/",
-		stats: {
-			colors: true
-		},
-	}).listen(8080, "localhost", function(err) {
-		if(err) throw new gutil.PluginError("webpack-dev-server", err);
-		gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html");
-	});
+gulp.task("js-in", function() {
+  return gulp.src(path.JS)
+    .pipe(sourcemaps.init())
+    .pipe(concat('mashup.js'))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./builds/inbound/js'))
+    .pipe(connect.reload());
 });
 
-gulp.task('webpack-out', function() {
-  return gulp.src('./assets/js/gateway.js')
-  .pipe(webpackStream( require('./webpack.pro.config')))
-  .pipe(gulp.dest('./builds/outbound/js'));
+gulp.task('js-out', function() {
+  gulp.src(path.JS)
+		.pipe(concat('mashup.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('./builds/outbound/js'))
+		.pipe(connect.reload());
 });
 
 // SVG TASKS ---------------------------------------------------->>>>>>>>
@@ -145,18 +133,6 @@ gulp.task('svg-out', function() {
     	.pipe(rename('defs.svg'))
     	.pipe(gulp.dest('./builds/outbound/svgs'))
 });
-
-// MOVE JS ---------------------------------------------------->>>>>>>>
-
-gulp.task('js-move-in', function () {
-  gulp.src(path.JS)
-  .pipe(gulp.dest('./builds/inbound/js'))
-})
-
-gulp.task('js-move-out', function () {
-  gulp.src(path.JS)
-  .pipe(gulp.dest('./builds/outbound/js'))
-})
 
 // IMAGE TASKS ---------------------------------------------------->>>>>>>>
 
@@ -208,11 +184,11 @@ gulp.task('watch', function() {
   gulp.watch([path.HTML], ['html-in']);
   gulp.watch([path.STYLESHEETS], ['style-in']);
   gulp.watch([path.SVG], ['svg-in', 'html-in']);
-  gulp.watch([path.JS], ['js-move-in']);
+  gulp.watch([path.JS], ['js-in']);
 });
 
-gulp.task('default', ['svg-in', 'html-in', 'style-in', 'js-move-in', 'img-in', 'fonts-in', 'connect', 'watch']);
+gulp.task('default', ['svg-in', 'html-in', 'style-in', 'js-in', 'img-in', 'fonts-in', 'connect', 'watch']);
 
-gulp.task('outbound', ['svg-out', 'html-out', 'style-out', 'js-move-out', 'images-out', 'fonts-out']);
+gulp.task('outbound', ['svg-out', 'html-out', 'style-out', 'js-out', 'img-out', 'fonts-out']);
 
 gulp.task('clean', ['clean-in', 'clean-out']);

@@ -5,7 +5,7 @@ module.exports = {
   devtool: false,
   sourceMaps: false,
   debug: false,
-  entry: './assets/js/gateway.js',
+  entry: './assets/js/entry.js',
   output: {
     path: __dirname + '/builds/outbound/js',
     filename: 'mashup.js'
@@ -13,7 +13,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js?$/,
+        test: /\.(js|hbs)?$/,
         exclude: [ 'node_modules', 'inbound', 'outbound' ],
         include: path.join(__dirname, 'assets/js'),
         loaders: [ 'babel' ]

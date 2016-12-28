@@ -32,3 +32,10 @@ $('a[href^="#"]').on('click', function(event) {
 $(".close_menu").on('click', function(event) {
   $('#toggle').removeClass('active');
 });
+
+(function() {
+
+  var template = Handlebars.compile( $('#template').html() );
+  $('#testimonial_template').append( template(data) );
+
+})();
