@@ -6,8 +6,7 @@
 	<div id="testimonial_template">
 
 	<script id="template" type="text/x-handlebars-template">
-		{{#each this}}
-			<div class="testimonial_template">
+			<div class="single_testimonial">
 				<div class="test_left">
 					<div class="testimonial_img">
 						<div class="test_image_wrap">
@@ -32,19 +31,22 @@
 					<p>"{{testimonial}}"</p>
 				</div>
 			</div>
-			{{/each}}
+			<div class="testimonial_more">
+				<div class="test_more_left">
+				</div>
+				<div class="test_more_fill">
+				</div>
+				<div class="test_more_link">
+					<a id="test_left" onclick="testominial_back()">click back</a>
+					<div>
+						<h1>More Testimonials</h1>
+						<p>{{current}} of {{total}}</p>
+					</div>
+					<a id="test_right" onclick="testominial_next()">click next</a>
+				</div>
+			</div>
 		</script>
 
 	</div> <!-- testimonial template -->
-
-
-	<div class="testimonial_more">
-		<div class="test_more_left">
-		</div>
-		<div class="test_more_fill">
-		</div>
-		<div class="test_more_link">
-		</div>
-	</div>
 
 </div> <!-- testimonial_rap -->

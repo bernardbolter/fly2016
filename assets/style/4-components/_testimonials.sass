@@ -10,7 +10,7 @@
 		margin: -31px 0 0 0
 		padding: 0
 
-.testimonial_template
+.single_testimonial
 	width: 100%
 	padding: 0
 	display: flex
@@ -210,11 +210,17 @@
 		display: block
 
 .test_more_link
-	display: none
+	display: flex
+	flex-direction: row
+	justify-content: center
+	width: 100%
+
 
 	+min-screen($nav-break)
 		width: 50%
 		margin: 0
 		background: desaturate(lighten($prime-color, 45), 78)
 		height: 150px
-		display: block
+
+.testimonial-hide
+	visibility: hidden
