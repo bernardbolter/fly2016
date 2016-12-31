@@ -37,12 +37,24 @@
 				<div class="test_more_fill">
 				</div>
 				<div class="test_more_link">
-					<a id="test_left" onclick="testominial_back()">click back</a>
-					<div>
+						<a id="test_left" onclick="testominial_back()">
+							<div class="svg_box">
+								<svg class="arrow-svg" viewBox="0 0 25 25">
+									<use xlink:href="#svg-arrow-left"></use>
+								</svg>
+						</div>
+					</a>
+					<div class="more_testimonials">
 						<h1>More Testimonials</h1>
 						<p>{{current}} of {{total}}</p>
 					</div>
-					<a id="test_right" onclick="testominial_next()">click next</a>
+					<a id="test_right" onclick="testominial_next()">
+						<div class="svg_box">
+							<svg class="arrow-svg" viewBox="0 0 25 25">
+								<use xlink:href="#svg-arrow"></use>
+							</svg>
+						</div>
+					</a>
 				</div>
 			</div>
 		</script>

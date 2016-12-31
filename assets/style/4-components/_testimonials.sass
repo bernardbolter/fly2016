@@ -41,7 +41,7 @@
 	width: 100%
 	margin-top: 0
 	display: flex
-	flex-direction: column
+	flex-direction: column-reverse
 
 	+min-screen($mid-hero-break)
 		width: 100%
@@ -70,8 +70,11 @@
 		background: lighten($test_cards, 15)
 
 	img
-		width: 90%
+		width: 220px
 		margin: 5%
+
+		+min-screen($mid-hero-break)
+			width: 270px
 
 .test_image_text_wrap
 	width: 100%
@@ -109,7 +112,7 @@
 		margin: 0
 		padding: 0
 		font-size: 18px
-		text-align: right
+		text-align: left
 
 		+min-screen($mid-hero-break)
 			text-align: left
@@ -117,7 +120,7 @@
 	p
 		margin: 0
 		padding: 0
-		text-align: right
+		text-align: left
 		line-height: 1.4
 		font-size: 12px
 
@@ -129,12 +132,17 @@
 
 	.test_grey
 		opacity: 0.5
-		font-size: 16px
+		font-size: 12px
+		display: block
+
+		+min-screen($mid-hero-break)
+			font-size: 16px
+			display: inline-block
 
 
 .test_text_position
 	position: relative
-	padding: 0 20px 20px
+	padding: 20px 20px 0
 
 	+min-screen($mid-hero-break)
 		position: relative
@@ -168,9 +176,10 @@
 		border-top: none
 
 	p
-		margin: 5%
-		font-size: 18px
+		margin: 7%
+		font-size: 16px
 		line-height: 1.5
+		padding-bottom: 35px
 
 		+min-screen($nav-break)
 			margin: 10% 5% 5% -60px
@@ -178,6 +187,7 @@
 			max-width: 600px
 			float: left
 			line-height: 1.5
+			padding-bottom: 0
 
 .testimonial_more
 	width: 100%
@@ -185,12 +195,12 @@
 	display: flex
 	flex-direction: row
 	justify-content: flex-end
-	height: 50px
+	height: 120px
 	background: desaturate(lighten($prime-color, 45), 78)
 
 	+min-screen($nav-break)
 		background: none
-		height: 150px
+		height: 120px
 
 .test_more_left
 	width: auto
@@ -206,7 +216,6 @@
 	+min-screen($nav-break)
 		width: 83px
 		background: desaturate(lighten($prime-color, 45), 78)
-		height: 150px
 		display: block
 
 .test_more_link
@@ -215,12 +224,73 @@
 	justify-content: center
 	width: 100%
 
+	#test_left
+		width: 40px
+		height: 100px
+		position: relative
+		cursor: pointer
+		padding-left: 15px
+
+		+min-screen(900px)
+			width: 100px
+			padding-left: 75px
+
+		.svg_box
+			width: 25px
+			height: 25px
+			position: relative
+
+			svg
+				position: absolute
+				width: 100%
+				height: 100%
+				fill: #888
+
+				&:hover
+					fill: #444
+
+	#test_right
+		width: 40px
+		height: 100px
+		position: relative
+		display: block
+		cursor: pointer
+
+		+min-screen(900px)
+			width: 100px
+
+		.svg_box
+			width: 25px
+			height: 25px
+			position: relative
+
+			svg
+				position: absolute
+				width: 100%
+				height: 100%
+				fill: #888
+
+				&:hover
+					fill: #444
+
+	.more_testimonials
+		h1
+			margin: 0 15px 0 17px
+			padding: 0
+			font-size: 20px
+			color: #444
+			font-weight: 300
+
+		p
+			font-size: 12px
+			color: #888
+			text-align: right
+			margin: 3px 20px
 
 	+min-screen($nav-break)
 		width: 50%
 		margin: 0
 		background: desaturate(lighten($prime-color, 45), 78)
-		height: 150px
 
 .testimonial-hide
 	visibility: hidden
