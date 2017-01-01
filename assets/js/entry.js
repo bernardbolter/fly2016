@@ -79,3 +79,12 @@ function renderTestimonial(count) {
 (function() {
  renderTestimonial(0);
 })();
+
+$(function() {
+    var s = Snap('svg');
+    var l = s.select('#svg-flight-path');
+
+    l.animate({ opacity: .5 }, 2000);
+
+
+});

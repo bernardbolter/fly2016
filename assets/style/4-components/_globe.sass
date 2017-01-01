@@ -10,18 +10,23 @@
 	.globe
 		width: auto
 		height: 0
-		padding: 0 0 36%
+		padding: 0 0 71%
 		margin: 0 $site-margin-small
 		position: relative
+		overflow: hidden
 
 		+min-screen($nav-break)
 			margin: 0 $site-margin
+			padding: 0 0 36%
 
 		svg
 			position: absolute
 			top: 0
 			left: 0
-			width: 100%
+			width: 200%
+
+			+min-screen($nav-break)
+				width: 100%
 
 	.globe_text
 		top: 15%
